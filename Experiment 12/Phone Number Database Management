@@ -1,0 +1,20 @@
+phone_dict = {}
+a= int(input())
+for i in range(a):
+	x = input().split()
+	if x[0] == "ADD":
+		name =x[1]
+		number =x[2]
+		phone_dict[name] = number
+	if x[0] == "REMOVE" :
+		name = x[1]
+		if name in phone_dict:
+			del phone_dict[name]
+	if x[0] =="DISPLAY":
+		if not phone_dict:
+			print("No contacts")
+		else:
+			for name in sorted(phone_dict):
+				print(f"{name}: {phone_dict[name]}")
+
+
